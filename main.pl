@@ -11,11 +11,10 @@ while (1) {
     print "終了時間 >> ";
     my $finish_time = <STDIN>;
 
-    # 配列は「＠」
-    my @start = split(/:/, $start_time);
-    my @finish = split(/:/, $finish_time);
+    my ($start_hour, $start_minute) = split(/:/, $start_time);
+    my ($finish_hour, $finish_minute) = split(/:/, $finish_time);
 
-    $working_time += (@finish[0] + @finish[1] / 60) - (@start[0] + @start[1] / 60);
+    $working_time += ($finish_hour + $finish_minute / 60) - ($start_hour + $start_minute / 60);
 
     print "まだ入力がありますか？ (y/n) ";
     my $input = <STDIN>;
