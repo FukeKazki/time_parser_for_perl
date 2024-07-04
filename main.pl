@@ -22,8 +22,7 @@ while (1) {
     # 改行コードの削除
     chomp($input);
 
-    # 文字列の一致
-    if ($input eq "n") {
+    if ($input ne "y") {
         # ループから抜ける
         last;
     }
